@@ -1,12 +1,13 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Employee = require("./lib/Employee");
+// const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
 let teamArray = [];
 
+// Helper function that asks the questions associated with an enginner
 const askAboutEngineer = async () => {
     await inquirer
         .prompt([
@@ -18,7 +19,7 @@ const askAboutEngineer = async () => {
             {
                 type: "input",
                 name: "id",
-                message: "What is the team engineer's ID?"
+                message: "What is the engineer's ID?"
             },
             {
                 type: "input",
@@ -33,7 +34,7 @@ const askAboutEngineer = async () => {
             {
                 type: "list",
                 name: "addMember",
-                message: "Would you like to add an engineer, add an intern, or finish building your team?",
+                message: "Would you like to add another engineer, add an intern, or finish building your team?",
                 choices: ["Add engineer", "Add intern", "Finish building"]
             },
         ]) 
@@ -51,6 +52,7 @@ const askAboutEngineer = async () => {
         })
 }
 
+// Helper function that asks the questions associated with an intern
 const askAboutIntern = async () => {
     await inquirer
         .prompt([
@@ -62,7 +64,7 @@ const askAboutIntern = async () => {
             {
                 type: "input",
                 name: "id",
-                message: "What is the team interns's ID?"
+                message: "What is the interns's ID?"
             },
             {
                 type: "input",
@@ -77,7 +79,7 @@ const askAboutIntern = async () => {
             {
                 type: "list",
                 name: "addMember",
-                message: "Would you like to add an engineer, add an intern, or finish building your team?",
+                message: "Would you like to add an engineer, add another intern, or finish building your team?",
                 choices: ["Add engineer", "Add intern", "Finish building"]
             },
         ])
@@ -137,6 +139,8 @@ inquirer
         }
     })
 
+// Helper function that builds an HTML file titled "team-profile.html" in the dist directory
+// The general structure used for the HTML is based on test-layout.html
 function buildHTML() {
     let teamCards = ""
     for(let i = 0; i < teamArray.length; i++) {
