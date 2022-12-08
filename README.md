@@ -24,4 +24,6 @@ Please refer to the license in the repo
 
 Github Repo URL: https://github.com/fortu038/Team_Profile_Generator
 
+Walkthrough Video URL: "https://drive.google.com/file/d/1hZ1ZsIgX8NVvUTKcH3EjpBHytNCekkqG/view"
+
 ![A screenshot of a created webpage](./assets/images/team-profile-screenshot.jpg)
